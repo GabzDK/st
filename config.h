@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Nerd Font:pixelsize=12:antialias=true:autohint=true";
-static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
+static char *font = "Iosevka Nerd Font:pixelsize=14:antialias=true:autohint=true";
+static char *font2[] = { "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
@@ -111,36 +111,42 @@ float alpha = 0.8;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
+/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-    "#393552",
-    "#eb6f92",
-    "#9ccfd8",
-    "#f6c177",
-    "#3e8fb0",
-    "#c4a7e7",
-    "#ea9a97",
-    "#e0def4",
-    "#6e6a86",
-    "#eb6f92",
-    "#9ccfd8",
-    "#f6c177",
-    "#3e8fb0",
-    "#c4a7e7",
-    "#ea9a97",
-    "#e0def4",
-    [255] = 0,
-    /* more colors can be added after 255 to use with DefaultXX */
-    [256] = "#000000",
+	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
+	[255] = 0,
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#add8e6", /* 256 -> cursor */
+	"#555555", /* 257 -> rev cursor*/
+	"#282828", /* 258 -> bg */
+	"#ebdbb2", /* 259 -> fg */
 };
+
+
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultbg = 256;
-unsigned int defaultfg = 7;
-unsigned int defaultcs = 7;
-unsigned int defaultrcs = 7;;
-unsigned int background = 256;
+unsigned int defaultfg = 259;
+unsigned int defaultbg = 258;
+unsigned int defaultcs = 256;
+unsigned int defaultrcs = 257;
+unsigned int background = 258;
 
 /*
  * Default shape of cursor
