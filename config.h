@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Nerd Font:pixelsize=14:antialias=true:autohint=true";
+static char *font = "monospace:pixelsize=16:antialias=true:autohint=true";
 static char *font2[] = { "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true" };
 static int borderpx = 2;
 
@@ -107,36 +107,42 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1.0;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
+/* Doom One Color Scheme for st terminal */
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
-	[255] = 0,
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#282828", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
-};
+	/* 8 normal colors */
+	"#1c1f24", /* black   */
+	"#ff6c6b", /* red     */
+	"#98be65", /* green   */
+	"#da8548", /* yellow  */
+	"#51afef", /* blue    */
+	"#c678dd", /* magenta */
+	"#4db5bd", /* cyan    */
+	"#5b6268", /* white   */
 
+	/* 8 bright colors */
+	"#3f444a", /* black   */
+	"#ff6c6b", /* red     */
+	"#98be65", /* green   */
+	"#ecbe7b", /* yellow  */
+	"#51afef", /* blue    */
+	"#c678dd", /* magenta */
+	"#46d9ff", /* cyan    */
+	"#dfdfdf", /* white   */
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#51afef", /* 256 -> cursor */
+	"#3e4451", /* 257 -> rev cursor*/
+	"#282c34", /* 258 -> bg */
+	"#bbc2cf", /* 259 -> fg */
+};
 
 /*
  * Default colors (colorname index)
